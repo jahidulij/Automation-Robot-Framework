@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220416 02:17:41.568" rpa="false" schemaversion="3">
+<suite id="s1" name="TC 041 DDT" source="C:\Users\Asus\workspace_python\robot_framework_udemy\TestCases\DDT\TC_041_DDT.robot">
+<test id="s1-t1" name="TC 041 Login Logout Functionality" line="10">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220416 02:17:42.037" level="INFO">Opening browser 'Chrome' to base url 'http://www.thetestingworld.com/'.</msg>
+<status status="PASS" starttime="20220416 02:17:42.036" endtime="20220416 02:17:47.037"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220416 02:17:47.039" endtime="20220416 02:17:47.157"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://a[contains(text(),'Login')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220416 02:17:47.158" level="INFO">Clicking element 'xpath://a[contains(text(),'Login')]'.</msg>
+<status status="PASS" starttime="20220416 02:17:47.158" endtime="20220416 02:17:48.400"/>
+</kw>
+<kw name="Read Number of Rows" library="UserKeywords">
+<var>${rows}</var>
+<arg>Sheet1</arg>
+<kw name="Fetch Number Of Rows" library="ReadData">
+<var>${max_row}</var>
+<arg>${sheetname}</arg>
+<msg timestamp="20220416 02:17:48.410" level="INFO">${max_row} = 4</msg>
+<status status="PASS" starttime="20220416 02:17:48.400" endtime="20220416 02:17:48.410"/>
+</kw>
+<msg timestamp="20220416 02:17:48.410" level="INFO">${rows} = 4</msg>
+<status status="PASS" starttime="20220416 02:17:48.400" endtime="20220416 02:17:48.410"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${rows}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220416 02:17:48.410" endtime="20220416 02:17:48.410"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${rows}+1</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Read Excel Data of Cell" library="UserKeywords">
+<var>${username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="ReadData">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20220416 02:17:48.429" level="INFO">${celldata} = username1</msg>
+<status status="PASS" starttime="20220416 02:17:48.429" endtime="20220416 02:17:48.429"/>
+</kw>
+<msg timestamp="20220416 02:17:48.429" level="INFO">${username} = username1</msg>
+<status status="PASS" starttime="20220416 02:17:48.429" endtime="20220416 02:17:48.429"/>
+</kw>
+<kw name="Read Excel Data of Cell" library="UserKeywords">
+<var>${password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="ReadData">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20220416 02:17:48.429" level="INFO">${celldata} = password1</msg>
+<status status="PASS" starttime="20220416 02:17:48.429" endtime="20220416 02:17:48.429"/>
+</kw>
+<msg timestamp="20220416 02:17:48.429" level="INFO">${password} = password1</msg>
+<status status="PASS" starttime="20220416 02:17:48.429" endtime="20220416 02:17:48.429"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220416 02:17:48.429" level="INFO">Typing text 'username1' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20220416 02:17:48.429" endtime="20220416 02:17:48.528"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220416 02:17:48.528" level="INFO">Typing text 'password1' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20220416 02:17:48.528" endtime="20220416 02:17:48.613"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://button[contains(text(),'Log in')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220416 02:17:48.613" level="INFO">Clicking element 'xpath://button[contains(text(),'Log in')]'.</msg>
+<status status="PASS" starttime="20220416 02:17:48.613" endtime="20220416 02:17:49.386"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220416 02:17:54.390" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220416 02:17:49.386" endtime="20220416 02:17:54.390"/>
+</kw>
+<status status="PASS" starttime="20220416 02:17:48.429" endtime="20220416 02:17:54.390"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Read Excel Data of Cell" library="UserKeywords">
+<var>${username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="ReadData">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20220416 02:17:54.391" level="INFO">${celldata} = username2</msg>
+<status status="PASS" starttime="20220416 02:17:54.391" endtime="20220416 02:17:54.391"/>
+</kw>
+<msg timestamp="20220416 02:17:54.391" level="INFO">${username} = username2</msg>
+<status status="PASS" starttime="20220416 02:17:54.390" endtime="20220416 02:17:54.391"/>
+</kw>
+<kw name="Read Excel Data of Cell" library="UserKeywords">
+<var>${password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="ReadData">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20220416 02:17:54.391" level="INFO">${celldata} = password2</msg>
+<status status="PASS" starttime="20220416 02:17:54.391" endtime="20220416 02:17:54.391"/>
+</kw>
+<msg timestamp="20220416 02:17:54.391" level="INFO">${password} = password2</msg>
+<status status="PASS" starttime="20220416 02:17:54.391" endtime="20220416 02:17:54.391"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220416 02:17:54.391" level="INFO">Typing text 'username2' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20220416 02:17:54.391" endtime="20220416 02:17:54.502"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220416 02:17:54.503" level="INFO">Typing text 'password2' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20220416 02:17:54.503" endtime="20220416 02:17:54.653"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://button[contains(text(),'Log in')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220416 02:17:54.653" level="INFO">Clicking element 'xpath://button[contains(text(),'Log in')]'.</msg>
+<status status="PASS" starttime="20220416 02:17:54.653" endtime="20220416 02:17:56.398"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220416 02:18:01.407" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220416 02:17:56.398" endtime="20220416 02:18:01.407"/>
+</kw>
+<status status="PASS" starttime="20220416 02:17:54.390" endtime="20220416 02:18:01.407"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Read Excel Data of Cell" library="UserKeywords">
+<var>${username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="ReadData">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20220416 02:18:01.407" level="INFO">${celldata} = username3</msg>
+<status status="PASS" starttime="20220416 02:18:01.407" endtime="20220416 02:18:01.407"/>
+</kw>
+<msg timestamp="20220416 02:18:01.407" level="INFO">${username} = username3</msg>
+<status status="PASS" starttime="20220416 02:18:01.407" endtime="20220416 02:18:01.407"/>
+</kw>
+<kw name="Read Excel Data of Cell" library="UserKeywords">
+<var>${password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="ReadData">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20220416 02:18:01.407" level="INFO">${celldata} = password3</msg>
+<status status="PASS" starttime="20220416 02:18:01.407" endtime="20220416 02:18:01.407"/>
+</kw>
+<msg timestamp="20220416 02:18:01.407" level="INFO">${password} = password3</msg>
+<status status="PASS" starttime="20220416 02:18:01.407" endtime="20220416 02:18:01.407"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220416 02:18:01.407" level="INFO">Typing text 'username3' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20220416 02:18:01.407" endtime="20220416 02:18:01.496"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220416 02:18:01.496" level="INFO">Typing text 'password3' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20220416 02:18:01.496" endtime="20220416 02:18:01.580"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://button[contains(text(),'Log in')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220416 02:18:01.581" level="INFO">Clicking element 'xpath://button[contains(text(),'Log in')]'.</msg>
+<status status="PASS" starttime="20220416 02:18:01.580" endtime="20220416 02:18:02.344"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220416 02:18:07.360" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220416 02:18:02.344" endtime="20220416 02:18:07.360"/>
+</kw>
+<status status="PASS" starttime="20220416 02:18:01.407" endtime="20220416 02:18:07.360"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Read Excel Data of Cell" library="UserKeywords">
+<var>${username}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>1</arg>
+<kw name="Fetch Cell Data" library="ReadData">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20220416 02:18:07.360" level="INFO">${celldata} = username4</msg>
+<status status="PASS" starttime="20220416 02:18:07.360" endtime="20220416 02:18:07.360"/>
+</kw>
+<msg timestamp="20220416 02:18:07.360" level="INFO">${username} = username4</msg>
+<status status="PASS" starttime="20220416 02:18:07.360" endtime="20220416 02:18:07.360"/>
+</kw>
+<kw name="Read Excel Data of Cell" library="UserKeywords">
+<var>${password}</var>
+<arg>Sheet1</arg>
+<arg>${i}</arg>
+<arg>2</arg>
+<kw name="Fetch Cell Data" library="ReadData">
+<var>${celldata}</var>
+<arg>${sheetname}</arg>
+<arg>${row}</arg>
+<arg>${cell}</arg>
+<msg timestamp="20220416 02:18:07.360" level="INFO">${celldata} = password4</msg>
+<status status="PASS" starttime="20220416 02:18:07.360" endtime="20220416 02:18:07.360"/>
+</kw>
+<msg timestamp="20220416 02:18:07.360" level="INFO">${password} = password4</msg>
+<status status="PASS" starttime="20220416 02:18:07.360" endtime="20220416 02:18:07.360"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220416 02:18:07.360" level="INFO">Typing text 'username4' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20220416 02:18:07.360" endtime="20220416 02:18:07.448"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220416 02:18:07.448" level="INFO">Typing text 'password4' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20220416 02:18:07.448" endtime="20220416 02:18:07.528"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://button[contains(text(),'Log in')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220416 02:18:07.529" level="INFO">Clicking element 'xpath://button[contains(text(),'Log in')]'.</msg>
+<status status="PASS" starttime="20220416 02:18:07.529" endtime="20220416 02:18:08.271"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220416 02:18:13.281" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220416 02:18:08.271" endtime="20220416 02:18:13.281"/>
+</kw>
+<status status="PASS" starttime="20220416 02:18:07.360" endtime="20220416 02:18:13.281"/>
+</iter>
+<status status="PASS" starttime="20220416 02:17:48.410" endtime="20220416 02:18:13.281"/>
+</for>
+<kw name="Sleep" library="BuiltIn">
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220416 02:18:18.291" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220416 02:18:13.281" endtime="20220416 02:18:18.291"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220416 02:18:18.291" endtime="20220416 02:18:20.416"/>
+</kw>
+<status status="PASS" starttime="20220416 02:17:42.035" endtime="20220416 02:18:20.416"/>
+</test>
+<status status="PASS" starttime="20220416 02:17:41.569" endtime="20220416 02:18:20.416"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 041 DDT">TC 041 DDT</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
